@@ -13,20 +13,22 @@ enum Reliability {
 }
 
 struct AvailabilityResponse {
-    1: required ServiceId service_id,
-    2: required double timeout_rate,
-    3: required double success_rate,
+    1: required ServiceId service_id
+    2: required double timeout_rate
+    3: required double success_rate
     4: required double conversion_rate // когда-нибудь появится
     5: required Reliability reliability // если хотим положиться на рассчёты сервиса
 }
 
 union Operation {
-    1: Start start,
-    2: Finish finish,
+    1: Start start
+    2: Finish finish
     3: Error error
 }
 
-struct Start {}
+struct Start {
+    1: required base.Timestamp time_start
+}
 
 struct Finish {
     1: required base.Timestamp time_spent
