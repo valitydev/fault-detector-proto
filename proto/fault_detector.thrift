@@ -39,9 +39,10 @@ struct Error {
     1: required base.Timestamp time_spent
 }
 
+// Устанавливаем какие-то из значений для disable/enable сервиса, полезная ручка
 struct SetRequest {
-    1: SetType set_type
-    2: double value
+    1: required SetType set_type
+    2: required double value // Значение от 0 до 1
 }
 
 enum SetType {
