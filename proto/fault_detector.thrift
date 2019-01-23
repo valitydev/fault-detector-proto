@@ -8,7 +8,7 @@ typedef base.ID RequestId
 
 enum Reliability {
     BAD = 0
-    NEUTRAL = 1
+    DEGRADED = 1
     GOOD = 2
 }
 
