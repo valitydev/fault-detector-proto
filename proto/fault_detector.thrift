@@ -8,8 +8,8 @@ typedef base.ID RequestId
 
 enum Reliability {
     BAD = 0
-    DEGRADED = 1
-    GOOD = 2
+    DEGRADED = 10
+    GOOD = 20
 }
 
 struct AvailabilityResponse {
