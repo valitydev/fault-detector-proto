@@ -16,7 +16,6 @@ struct AvailabilityResponse {
     1: required ServiceId service_id
     2: required double timeout_rate // сколько запросов вышли за пределы среднего значения времени
     3: required double success_rate // сколько запросово из общего количества завершились успешно
-    4: required double conversion_rate // когда-нибудь появится
     5: required Reliability reliability // если хотим положиться на рассчёты сервиса
 }
 
@@ -42,7 +41,6 @@ union ErrorReason {
 struct Timeout {}
 struct Unavailable {}
 
-// Какие типы ошибок хотим видеть вообще?
 struct Error {
     1: required base.Timestamp time_end
     2: required ErrorReason error_reason
@@ -55,9 +53,8 @@ struct SetRequest {
 }
 
 enum SetType {
-    TIMEOUT
-    SUCCESS
-    CONVERSION
+    TIMEOUT_RATE
+    SUCCESS_RATE
     ALL
 }
 
