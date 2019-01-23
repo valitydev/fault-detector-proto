@@ -7,9 +7,9 @@ typedef base.ID ServiceId
 typedef base.ID RequestId
 
 enum Reliability {
-    BAD
-    NEUTRAL
-    GOOD
+    BAD = 0
+    NEUTRAL = 1
+    GOOD = 2
 }
 
 struct AvailabilityResponse {
@@ -31,12 +31,21 @@ struct Start {
 }
 
 struct Finish {
-    1: required base.Timestamp time_spent
+    1: required base.Timestamp time_end
 }
+
+union ErrorReason {
+    1: Timeout timeout
+    2: Unavailable unavailable
+}
+
+struct Timeout {}
+struct Unavailable {}
 
 // Какие типы ошибок хотим видеть вообще?
 struct Error {
-    1: required base.Timestamp time_spent
+    1: required base.Timestamp time_end
+    2: required ErrorReason error_reason
 }
 
 // Устанавливаем какие-то из значений для disable/enable сервиса, полезная ручка
