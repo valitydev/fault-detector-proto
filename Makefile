@@ -10,7 +10,8 @@ TEMPLATES_PATH := .
 SERVICE_NAME := fault-detector-proto
 
 # Build image tag to be used
-BUILD_IMAGE_TAG := 55e987e74e9457191a5b4a7c5dc9e3838ae82d2b
+BUILD_IMAGE_NAME := build-erlang
+BUILD_IMAGE_TAG := 620863fa1e648382c7b8f02c93d1d6168ea80f5d
 CALL_ANYWHERE := \
 	all submodules compile clean distclean \
 	java.compile java.deploy
