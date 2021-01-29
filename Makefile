@@ -11,7 +11,7 @@ SERVICE_NAME := fault-detector-proto
 
 # Build image tag to be used
 BUILD_IMAGE_NAME := build-erlang
-BUILD_IMAGE_TAG := 0b28e96552d4ded2cbcb7afb4f58eaa0627f4f2a
+BUILD_IMAGE_TAG := 61a001bbb48128895735a3ac35b0858484fdb2eb
 CALL_ANYWHERE := \
 	all submodules compile clean distclean \
 	java.compile java.deploy
