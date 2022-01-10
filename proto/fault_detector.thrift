@@ -1,6 +1,6 @@
 include "base.thrift"
 
-namespace java com.rbkmoney.damsel.fault_detector
+namespace java dev.vality.damsel.fault_detector
 namespace erlang fault_detector
 
 typedef base.ID ServiceId
